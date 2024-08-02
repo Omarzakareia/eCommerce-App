@@ -28,7 +28,8 @@ namespace Talabat.APIs.Controllers
         }
 
         // Get ALl Products [EndPoint]
-        [Authorize]
+        [CachedAttribute(300)]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams Params)
         {

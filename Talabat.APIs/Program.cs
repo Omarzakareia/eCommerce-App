@@ -94,9 +94,9 @@ namespace Talabat.APIs
             #region Configure - Configure the HTTP request pipeline
 
             // Configure the HTTP request pipeline.
+            app.UseMiddleware<ExceptionMiddleWare>();
             if (app.Environment.IsDevelopment())
             {
-                app.UseMiddleware<ExceptionMiddleWare>();
                 app.UseSwaggerMiddleWares();
             }
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
