@@ -1,12 +1,10 @@
-﻿namespace Talabat.APIs.Extensions
+﻿namespace Talabat.APIs.Extensions;
+public static class AddSwaggerMiddlewares
 {
-    public static class AddSwaggerMiddlewares
+    public static WebApplication UseSwaggerMiddleWares(this WebApplication app)
     {
-        public static WebApplication UseSwaggerMiddleWares(this WebApplication app)
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-            return app;
-        }
+        app.UseSwagger();
+        app.UseSwaggerUI();
+        return app;
     }
 }

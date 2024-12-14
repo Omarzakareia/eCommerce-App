@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Talabat.Core.Services
+﻿namespace Talabat.Core.Services;
+public interface IResponseCacheService
 {
-    public interface IResponseCacheService
-    {
-        // Cache Data 
-        Task CacheResponseAsync(string cacheKey, object response, TimeSpan ExpireTime);
-        // Get Cached Data 
-        Task<string?> GetCachedResponse(string cacheKey);
-    }
+    // Cache Data 
+    Task CacheResponseAsync(string cacheKey, object response, TimeSpan ExpireTime);
+    // Get Cached Data 
+    Task<string?> GetCachedResponse(string cacheKey);
 }

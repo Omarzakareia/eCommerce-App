@@ -1,19 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Talabat.Core.Entities.Order_Aggregate;
-
-namespace Talabat.Core.Services
+﻿using Talabat.Core.Entities.Order_Aggregate;
+namespace Talabat.Core.Services;
+public interface IOrderService
 {
-    public interface IOrderService
-    {
-
-        Task<Order?> CreateOrderAsync(string BuyerEmail, string BasketId, int DeliveryMethodId, Address ShippingAddress);
-        Task<IReadOnlyList<Order>> GetOrdersForSpecificationAsync(string BuyerEmail);
-        Task<Order> GetOrderByIdForSpecificUserAsync(string BuyerEmail, int OrderId);
-        Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync();
-    }
+    Task<Order?> CreateOrderAsync(string BuyerEmail, string BasketId, int DeliveryMethodId, Address ShippingAddress);
+    Task<IReadOnlyList<Order>> GetOrdersForSpecificationAsync(string BuyerEmail);
+    Task<Order> GetOrderByIdForSpecificUserAsync(string BuyerEmail, int OrderId);
+    Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync();
 }
